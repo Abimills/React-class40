@@ -1,0 +1,100 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.mother-container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+   
+    
+}
+
+.container{
+    margin-bottom: 3rem;
+    width: 50%;
+    height: 20%;
+    margin-top: 3rem;
+    margin-left: 1rem;
+    
+}
+.product{
+    width:300px;
+    height: 350px;
+    
+
+}
+
+.product img{
+    width: 100%;
+    height:90%;
+    
+
+}
+.product p{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 0.75rem;
+    background-color: black;
+    color: white;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.category{
+    display: flex;
+    justify-content: center;
+}
+.single-category{
+    background-color: black;
+    margin: 1rem;
+    color:white;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    width: 150px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    cursor: pointer;
+    height: 50px;
+    text-transform: capitalize;
+}
+.single-category:hover {
+background-color: transparent;
+color: black;
+border: 1px solid black;
+
+}
+
+.extra{
+    background-color: rgb(4, 115, 78);
+}
+
+
+
+
+
+@media screen  and (max-width:900px ) {
+    .single-category{
+height:30px;
+    }
+    .mother-container{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+@media screen  and (max-width:650px ) {
+    .single-category{
+height:30px;
+font-size: 0.6rem;
+    }
+    .mother-container{
+        grid-template-columns: repeat(1,1fr);
+        place-items: center;
+    }
+    .container{
+        margin-top: -2rem;
+    }
+}
