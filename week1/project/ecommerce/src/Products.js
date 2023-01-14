@@ -1,9 +1,11 @@
 import React , {useState}from 'react'
 import products from './fake-data/all-products.js'
-import category from './fake-data/all-categories'
+
+import Category from './category'
 import SingleProduct from './SingleProduct'
 const Products = () => {
 const [myCategory,setMyCategory] = useState('');
+const [title,setTitle] = useState('Products');
 
 
 
@@ -11,57 +13,25 @@ const [myCategory,setMyCategory] = useState('');
     <>
     
     
- <h1>Products</h1>
-    
+ <h1>{title}</h1>
 
 
-            <div className="category">
-           {category.map((singleCategory) => {
+<Category myCategory={myCategory} setMyCategory={setMyCategory} />
+        
 
 
-              return(  
-              
-              <h4 className={`${singleCategory.slice(6) == myCategory ? 'single-category extra' : 'single-category'}`}  onClick={() => setMyCategory(singleCategory.slice(6))}  >
-                
-                {singleCategory.slice(6) 
-              
-              
-              }
-            
-              
-              </h4>
-              
-              )
+ <div className='mother-container'>
+{!myCategory ? products.map(product => (
 
-           })}
-
-
-    </div>
-
-
-    <div className='mother-container'>
-
- {!myCategory ? products.map(product => (
-                 <SingleProduct product={product}  key={product.id} />
-    
-            )
-        )  
+<SingleProduct product={product}  key={product.id} />))  
         : 
-
-          products.filter(cat => cat.category.toLowerCase() === myCategory )
-          .map(product => 
-         <SingleProduct product={product} key={product.id}  />
+        
+products.filter(cat => cat.category.toLowerCase() === myCategory )
+.map(product => 
+   <SingleProduct product={product} key={product.id}  />
          
-         )
-    
-             }
-             
-             
-             
-             
-             </div>
+         )} </div>
     </>
-  )
-}
+  )}
 
 export default Products

@@ -2,7 +2,7 @@ import React from 'react'
 
 const SingleProduct = ({product}) => {
 
-const {id,title,price,description,category,image,rating} = product;
+const {id,title,image} = product;
 
   return (
     <div className='container'>
